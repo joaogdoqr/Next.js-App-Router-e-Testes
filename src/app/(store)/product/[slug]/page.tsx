@@ -19,14 +19,14 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const response = await api("/products/featured");
-  const products: Product[] = await response.json();
+// export async function generateStaticParams() {
+//   const response = await api("/products/featured");
+//   const products: Product[] = await response.json();
 
-  return products.map((product) => {
-    return { slug: product.slug };
-  });
-}
+//   return products.map((product) => {
+//     return { slug: product.slug };
+//   });
+// }
 
 async function getProductBySlug(slug: string): Promise<Product> {
   const response = await api(`/products/${slug}`, {
